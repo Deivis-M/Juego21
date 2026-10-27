@@ -5,8 +5,9 @@ import java.util.ArrayList;
 import com.krakedev.juegos.entidades.Carta;
 
 public class Dealer {
+	
 
-	private ArrayList<Carta> naipe = new ArrayList<Carta>();
+	private ArrayList<Carta> naipe;
 
 	public ArrayList<Carta> getNaipe() {
 		return naipe;
@@ -14,6 +15,11 @@ public class Dealer {
 
 	public void setNaipe(ArrayList<Carta> naipe) {
 		this.naipe = naipe;
+	}
+	
+	public Dealer () {
+		naipe = new ArrayList<Carta>();
+		generarNaipe();
 	}
 
 	public void generarNaipe() {
@@ -72,6 +78,15 @@ public class Dealer {
 		    }
 		}
 	}
+	
+	public void imprimirNaipe () {
+		
+		for (Carta a : naipe) {
+			a.imprimir();
+		}
+		
+	}
+	
 	
 }
 
