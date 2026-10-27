@@ -93,6 +93,14 @@ public class Dealer {
 		return numeroAleatorio;
 	}
 	
+	public Carta entregarCarta() {
+		Carta cartaGuardada ;
+		int posicionCarta=generarAleatorio((naipe.size())-1);
+		cartaGuardada = naipe.get(posicionCarta);
+		naipe.remove(posicionCarta);
+		return cartaGuardada;
+	}
+	
 	
 }
 
