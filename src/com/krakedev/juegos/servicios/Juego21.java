@@ -9,6 +9,23 @@ public class Juego21 {
 
 	private ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
 	private Dealer dealer;
+	
+
+	public ArrayList<Jugador> getJugadores() {
+		return jugadores;
+	}
+
+	public void setJugadores(ArrayList<Jugador> jugadores) {
+		this.jugadores = jugadores;
+	}
+
+	public Dealer getDealer() {
+		return dealer;
+	}
+
+	public void setDealer(Dealer dealer) {
+		this.dealer = dealer;
+	}
 
 	public void cargarValores() {
 
