@@ -5,8 +5,6 @@ public class Carta {
 	private String valor;
 	private int valorJuego;
 	private String palo;
-	private String setValor;
-
 	public String getValor() {
 		return valor;
 	}

@@ -14,10 +14,33 @@ public class Jugador {
 	public void setNickname(String nickname) {
 		this.nickname = nickname;
 	}
+	
+
+	public ArrayList<Carta> getCartas() {
+		return cartas;
+	}
+
+	public void setCartas(ArrayList<Carta> cartas) {
+		this.cartas = cartas;
+	}
 
 	public void recibirCarta(Carta carta) {
 
 		cartas.add(carta);
 	}
+	
+	public void imprimir() {
+		System.out.println("Su nombre es: "+nickname);
+		System.out.println("Y sus cartas asginadas son :");
+		
+		for (Carta c:cartas) {
+			c.imprimir();
+			
+		}
+		
+	}
+
+
+	
 
 }

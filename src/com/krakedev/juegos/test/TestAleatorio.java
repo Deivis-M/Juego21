@@ -9,8 +9,8 @@ public class TestAleatorio {
 		
 		Dealer d = new Dealer();
 		
-		for (int i = 0; i <100; i++) {
-			int valor=d.generarAleatorio(50);
+		for (int i = 0; i <25; i++) {
+			int valor=d.generarAleatorio(10);
 			System.out.println(valor);
 			}
 		}

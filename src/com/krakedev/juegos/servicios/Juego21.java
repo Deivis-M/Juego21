@@ -1,0 +1,50 @@
+package com.krakedev.juegos.servicios;
+
+import java.util.ArrayList;
+
+import com.krakedev.juegos.entidades.Carta;
+import com.krakedev.juegos.entidades.Jugador;
+
+public class Juego21 {
+
+	private ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
+	private Dealer dealer;
+
+	public void cargarValores() {
+
+		for (Carta a : dealer.getNaipe()) {
+			if (a.getValor().equals("A")) {
+				a.setValorJuego(11);
+			} else if (a.getValor().equals("J") || a.getValor().equals("Q") || a.getValor().equals("K")) {
+				a.setValorJuego(10);
+			} else {
+				int numero = Integer.parseInt(a.getValor());
+				a.setValorJuego(numero);
+			}
+		}
+
+	}
+
+	public void inicializar() {
+		dealer = new Dealer();
+		cargarValores();
+	}
+
+	public void agregarJugador(Jugador jugador) {
+		jugadores.add(jugador);
+
+	}
+
+	public void repartirCarta(Jugador jugador) {
+		Carta repartiCarta = dealer.entregarCarta();
+		jugador.recibirCarta(repartiCarta);
+
+	}
+
+	public void repartirRonda() {
+		for (Jugador j : jugadores) {
+			repartirCarta(j);
+		}
+	}
+
+}
