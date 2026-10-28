@@ -60,8 +60,8 @@ public class Juego21 {
 	public void repartirRonda() {
 		for (Jugador j : jugadores) {
 			repartirCarta(j);
-			calcularTotal();
 		}
+		calcularTotal();
 	}
 
 	public void calcularTotal() {
@@ -79,6 +79,18 @@ public class Juego21 {
 		for (Jugador ganador : jugadores) {
 			if (ganador.getValorTotal() == 21) {
 				ganadores.add(ganador);
+			}
+		}
+		return ganadores;
+	}
+
+	public ArrayList<Jugador> jugar() {
+		ArrayList<Jugador> ganadores = new ArrayList<Jugador>();
+		for (int i = 0; i < 3; i++) {
+			repartirRonda();
+			 ganadores = validarGanador();
+			if (ganadores.size() >= 1) {
+				break;
 			}
 		}
 		return ganadores;
