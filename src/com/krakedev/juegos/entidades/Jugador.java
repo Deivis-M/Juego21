@@ -6,6 +6,25 @@ public class Jugador {
 
 	private String nickname;
 	private ArrayList<Carta> cartas = new ArrayList<Carta>();
+	private int puntajeCartas;
+	private int valorTotal;
+	
+
+	public int getValorTotal() {
+		return valorTotal;
+	}
+
+	public void setValorTotal(int valorTotal) {
+		this.valorTotal = valorTotal;
+	}
+
+	public int getPuntajeCartas() {
+		return puntajeCartas;
+	}
+
+	public void setPuntajeCartas(int puntajeCartas) {
+		this.puntajeCartas = puntajeCartas;
+	}
 
 	public String getNickname() {
 		return nickname;
@@ -39,6 +58,8 @@ public class Jugador {
 		}
 		
 	}
+	
+	
 
 
 	

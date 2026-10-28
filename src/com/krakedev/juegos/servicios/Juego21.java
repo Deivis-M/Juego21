@@ -61,6 +61,17 @@ public class Juego21 {
 	public void repartirRonda() {
 		for (Jugador j : jugadores) {
 			repartirCarta(j);
+			calcularTotal();
+		}
+	}
+	
+	public void calcularTotal () {
+		for (Jugador jugador : jugadores) {
+			int valorSumar = 0;
+			for (Carta carta : jugador.getCartas()) {
+				valorSumar=valorSumar+carta.getValorJuego();
+			}
+			jugador.setValorTotal(valorSumar);
 		}
 	}
 
