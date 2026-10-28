@@ -9,7 +9,6 @@ public class Juego21 {
 
 	private ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
 	private Dealer dealer;
-	
 
 	public ArrayList<Jugador> getJugadores() {
 		return jugadores;
@@ -64,15 +63,25 @@ public class Juego21 {
 			calcularTotal();
 		}
 	}
-	
-	public void calcularTotal () {
+
+	public void calcularTotal() {
 		for (Jugador jugador : jugadores) {
 			int valorSumar = 0;
 			for (Carta carta : jugador.getCartas()) {
-				valorSumar=valorSumar+carta.getValorJuego();
+				valorSumar = valorSumar + carta.getValorJuego();
 			}
 			jugador.setValorTotal(valorSumar);
 		}
+	}
+
+	public ArrayList<Jugador> validarGanador() {
+		ArrayList<Jugador> ganadores = new ArrayList<Jugador>();
+		for (Jugador ganador : jugadores) {
+			if (ganador.getValorTotal() == 21) {
+				ganadores.add(ganador);
+			}
+		}
+		return ganadores;
 	}
 
 }
