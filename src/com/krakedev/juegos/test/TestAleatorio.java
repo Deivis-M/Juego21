@@ -10,7 +10,7 @@ public class TestAleatorio {
 		Dealer d = new Dealer();
 		
 		for (int i = 0; i <25; i++) {
-			int valor=d.generarAleatorio(10);
+			int valor=d.generarAleatorio(5);
 			System.out.println(valor);
 			}
 		}
